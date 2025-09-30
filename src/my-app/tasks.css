@@ -6,7 +6,7 @@ body {
   padding: 0;
 }
 
-p {
+span {
   font-size: 1rem;
 }
 
@@ -46,6 +46,11 @@ input {
   display: none;
 }
 
+.edit-btn {
+  margin-left: 20px;
+  display: none;
+}
+
 .info-box-1 {
   display: flex;
   justify-content: space-between;
@@ -58,6 +63,11 @@ input {
 }
 
 .info-box-1:hover .delete-btn {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.info-box-1:hover .edit-btn {
   display: inline-block;
   cursor: pointer;
 }

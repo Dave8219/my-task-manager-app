@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+// import LogoutLink from "./LogoutLink.jsx";
+import ReactRouterLogout from "./ReactRouterLogout.jsx";
+
 import { names } from "./names.js";
 import "./tasks.css";
 
@@ -26,6 +29,7 @@ const RenderTasks = () => {
   return (
     <>
       <main>
+        <ReactRouterLogout />
         <CustomerInfo />
         <GridContainerHeading />
         <Tasks people={people} onDelete={deletePerson} onEdit={editPerson} />
@@ -97,7 +101,7 @@ const Tasks = ({ people, onDelete, onEdit }) => {
       <div className="grid-container">
         {people.map(({ id, name, task, progress }) => {
           // const { id, name, task, progress } = person;
-
+          /*
           let progressStyle = {};
           if (progress === "Done") {
             progressStyle = {
@@ -109,8 +113,19 @@ const Tasks = ({ people, onDelete, onEdit }) => {
           } else if (progress === "Delayed") {
             progressStyle = { backgroundColor: "yellow", color: "black" };
           }
+*/
 
           const isEditing = editingId === id; // to set conditional statements
+
+          const currentProgress = isEditing ? editValues.progress : progress;
+
+          const styles = {
+            Done: { backgroundColor: "orange", color: "black" },
+            "In Progress": { backgroundColor: "green", color: "white" },
+            Delayed: { backgroundColor: "yellow", color: "black" },
+          };
+
+          const progressStyle = styles[currentProgress] || {};
 
           return (
             <React.Fragment key={id}>
@@ -158,11 +173,16 @@ const Tasks = ({ people, onDelete, onEdit }) => {
 
               <div className="info-box-3" style={progressStyle}>
                 {isEditing ? (
-                  <input
+                  <select
                     name="progress"
-                    value={editValues.progress}
+                    value={editValues.progress || ""}
                     onChange={handleChange}
-                  />
+                  >
+                    <option value="">Select Progress</option>
+                    <option value="Done">Done</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Delayed">Delayed</option>
+                  </select>
                 ) : (
                   <span className="info-box-p">{progress}</span>
                 )}
@@ -174,6 +194,16 @@ const Tasks = ({ people, onDelete, onEdit }) => {
     </div>
   );
 };
+
+/*
+isEditing ? (
+                  <input
+                    name="progress"
+                    value={editValues.progress}
+                    onChange={handleChange}
+                  />
+                )
+*/
 
 const AddPeople = ({ onAdd }) => {
   // const [people, setPeople] = useState(names);

@@ -10,12 +10,22 @@ span {
   font-size: 1rem;
 }
 
+a {
+  cursor: pointer;
+}
+
 input {
   background-color: whitesmoke;
   font-size: 1rem;
   border: gainsboro solid 0.5px;
   color: black;
 }
+
+/*
+.logout-link {
+  text-align: end;
+}
+*/
 
 .grid-container-heading {
   display: grid;
@@ -73,6 +83,9 @@ input {
 }
 
 .info-box-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
   border-right: solid black 1px;
   border-bottom: solid black 1px;
@@ -81,6 +94,9 @@ input {
 }
 
 .info-box-3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
   border-bottom: solid black 1px;
   text-align: start;

@@ -3,20 +3,20 @@ export const names = [
     id: "1",
     name: "David Garcia",
     task: "Painting",
-    progress: "In Progress",
+    progress: "Done",
   },
 
   {
     id: "2",
     name: "Anthony Garcia",
     task: "Flooring",
-    progress: "Done",
+    progress: "Delayed",
   },
   {
     id: "3",
     name: "Steve Martin",
     task: "Roof Shingles",
-    progress: "Delayed",
+    progress: "In Progress",
   },
   {
     id: "4",

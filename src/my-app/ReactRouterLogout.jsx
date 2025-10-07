@@ -10,15 +10,9 @@ import LoginPage from "./LoginPage";
 const ReactRouterLogout = () => {
   // const navigate = useNavigate();
   return (
-    <Router>
-      <div style={{ textAlign: "end" }}>
-        <Link to="/login">Logout</Link>
-      </div>
-
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-      </Routes>
-    </Router>
+    <div style={{ textAlign: "end" }}>
+      <Link to="/login">Logout</Link>
+    </div>
   );
 };
 

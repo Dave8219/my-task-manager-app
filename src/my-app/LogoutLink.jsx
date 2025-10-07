@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+// using useNavigate instead of <Link>
 const LogoutLink = () => {
   const navigate = useNavigate();
   return (

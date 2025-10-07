@@ -11,7 +11,16 @@ const ReactRouterLogout = () => {
   // const navigate = useNavigate();
   return (
     <div style={{ textAlign: "end" }}>
-      <Link to="/login">Logout</Link>
+      <Link
+        to="/login"
+        style={{
+          color: "#202bf3ff;",
+          fontSize: "1rem",
+          fontWeight: "700",
+        }}
+      >
+        Logout
+      </Link>
     </div>
   );
 };

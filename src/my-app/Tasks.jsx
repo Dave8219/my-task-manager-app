@@ -253,7 +253,7 @@ const AddPeople = ({ onAdd }) => {
   };
 
   return (
-    <div>
+    <div className="add-names-container">
       <form onSubmit={handleSubmit}>
         <input
           name="name"
@@ -269,13 +269,14 @@ const AddPeople = ({ onAdd }) => {
           onChange={handleChange}
           placeholder="Enter task"
         />
-        <input
-          name="progress"
-          type="text"
-          value={formData.progress}
-          onChange={handleChange}
-          placeholder="Enter progress"
-        />
+
+        <select name="progress" onChange={handleChange} className="select-btn">
+          <option value="">Select Progress</option>
+          <option value="Done">Done</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Delayed">Delayed</option>
+        </select>
+
         <div>
           <button type="submit" className="add-button">
             Add

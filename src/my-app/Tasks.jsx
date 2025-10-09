@@ -9,7 +9,21 @@ import "./tasks.css";
 // <AddPeople people={people} setPeople={setPeople} />;
 
 const RenderTasks = () => {
-  const [people, setPeople] = useState(names);
+  // const [people, setPeople] = useState(names);
+  const [people, setPeople] = useState(() => {
+    const saved = localStorage.getItem("people");
+    return saved ? JSON.parse(saved) : names;
+  });
+
+  useEffect(() => {
+    if (people.length === 0) {
+      localStorage.setItem("people", JSON.stringify(names));
+      setPeople(names);
+    } else {
+      localStorage.setItem("people", JSON.stringify(people));
+    }
+  }, [people]);
+
   const addPerson = (newPerson) => {
     setPeople([...people, newPerson]);
   };

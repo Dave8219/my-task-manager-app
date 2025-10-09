@@ -19,10 +19,10 @@ const LoginPage = () => {
         </div>
         <div className="forgot-box">
           <p className="forgot-user">
-            <a href="aol.com"> Forgot Username </a>
+            <a href="/verify"> Forgot Username </a>
           </p>
           <p className="forgot-pass">
-            <a href="aol.com"> Forgot Password </a>
+            <a href="/verify"> Forgot Password </a>
           </p>
         </div>
       </div>

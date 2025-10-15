@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { names } from "./names.js";
 import Tasks from "./components/Tasks.jsx";
-import "./tasks.css";
+import "./styles/tasks.css";
 import LogoutLink from "./components/LogoutLink.jsx";
 import GridContainerHeading from "./components/GridContainerHeading.jsx";
 import CustomerInfo from "./components/CustomerInfo.jsx";

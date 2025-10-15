@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./AuthContext.jsx";
-import "../tasks.css";
+import "../styles/tasks.css";
 
 // using useNavigate instead of <Link>
 const LogoutLink = () => {

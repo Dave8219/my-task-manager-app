@@ -1,4 +1,4 @@
-import "./tasks.css";
+import "./styles/tasks.css";
 
 const VerifyEmail = () => {
   return (

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "../tasks.css";
+import "../styles/tasks.css";
 
 const AddPeople = ({ onAdd }) => {
   // const [people, setPeople] = useState(names);

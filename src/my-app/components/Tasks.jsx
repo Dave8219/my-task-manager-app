@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { names } from "../names.js";
-import "../tasks.css";
+import "../styles/tasks.css";
 import LogoutLink from "./LogoutLink.jsx";
 
 // this belonged in the RenderTasks Component with a hard coded setup

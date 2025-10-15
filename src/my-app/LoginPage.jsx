@@ -1,7 +1,7 @@
 import "./login-page.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "./AuthContext";
+import { AuthContext } from "./components/AuthContext";
 
 const LoginPage = () => {
   const { setIsLoggedIn } = useContext(AuthContext);
@@ -21,10 +21,11 @@ const LoginPage = () => {
           <div className="username-box">
             <p className="username">Username</p>
             <input
-              type="username"
+              type="text"
               id="username"
               name="username"
               placeholder="username"
+              autoComplete="username"
             />
           </div>
           <div className="password-box">
@@ -34,6 +35,7 @@ const LoginPage = () => {
               id="password"
               name="password"
               placeholder="password"
+              autoComplete="current-password"
             />
           </div>
           <div className="submit-box">

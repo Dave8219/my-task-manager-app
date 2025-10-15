@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
-import RenderTasks from "./my-app/Tasks.jsx";
+import RenderTasksPage from "./my-app/RenderTasksPage.jsx";
 import LoginPage from "./my-app/LoginPage.jsx";
-import CreateAccount from "./my-app/CreateAccount.jsx";
-import VerifyEmail from "./my-app/VerifyEmail.jsx";
-import { AuthContext, AuthProvider } from "./my-app/AuthContext.jsx";
+import CreateAccountPage from "./my-app/CreateAccountPage.jsx";
+import VerifyEmailPage from "./my-app/VerifyEmailPage.jsx";
+import { AuthContext, AuthProvider } from "./my-app/components/AuthContext.jsx";
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,11 +11,6 @@ import {
   Link,
   Navigate,
 } from "react-router-dom";
-
-const RequireAuth = ({ children }) => {
-  const { isLoggedIn } = useContext(AuthContext);
-  return isLoggedIn ? children : <Navigate to="/login" replace />;
-};
 
 function App() {
   return (
@@ -27,18 +22,23 @@ function App() {
               path="/"
               element={
                 <RequireAuth>
-                  <RenderTasks />
+                  <RenderTasksPage />
                 </RequireAuth>
               }
             />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/create-account" element={<CreateAccount />} />
-            <Route path="/verify" element={<VerifyEmail />} />
+            <Route path="/create-account" element={<CreateAccountPage />} />
+            <Route path="/verify" element={<VerifyEmailPage />} />
           </Routes>
         </div>
       </Router>
     </AuthProvider>
   );
 }
+
+const RequireAuth = ({ children }) => {
+  const { isLoggedIn } = useContext(AuthContext);
+  return isLoggedIn ? children : <Navigate to="/login" replace />;
+};
 
 export default App;

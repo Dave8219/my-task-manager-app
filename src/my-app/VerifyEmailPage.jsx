@@ -1,3 +1,5 @@
+import "./tasks.css";
+
 const VerifyEmail = () => {
   return (
     <div>
@@ -7,6 +9,9 @@ const VerifyEmail = () => {
           <label>Email:</label>
           <input />
         </div>
+        <button type="submit" className="submit-btn">
+          Submit
+        </button>
       </form>
     </div>
   );

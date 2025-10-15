@@ -1,6 +1,5 @@
 body {
   background-color: rgb(158, 201, 238);
-  height: 2000px;
   color: black;
   margin: 0;
   padding: 0;
@@ -142,4 +141,18 @@ input::placeholder {
   width: 100px;
   border-radius: 10px;
   margin-top: 10px;
+  cursor: pointer;
+}
+
+.logout-div {
+  text-align: end;
+}
+
+.logout-btn {
+  color: #202bf3ff;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }

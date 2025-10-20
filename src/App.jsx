@@ -26,8 +26,11 @@ function App() {
                 </RequireAuth>
               }
             />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/create-account" element={<CreateAccountPage />} />
+            <Route path="/user/login" element={<LoginPage />} />
+            <Route
+              path="/new-user/create-account"
+              element={<CreateAccountPage />}
+            />
             <Route path="/verify" element={<VerifyEmailPage />} />
           </Routes>
         </div>
@@ -38,7 +41,7 @@ function App() {
 
 const RequireAuth = ({ children }) => {
   const { isLoggedIn } = useContext(AuthContext);
-  return isLoggedIn ? children : <Navigate to="/login" replace />;
+  return isLoggedIn ? children : <Navigate to="/user/login" replace />;
 };
 
 export default App;

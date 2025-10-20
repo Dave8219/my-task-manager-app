@@ -53,7 +53,7 @@ const LoginPage = () => {
           </div>
         </div>
         <h4>
-          <Link to="/create-account">Create Account</Link>
+          <Link to="/new-user/create-account">Create Account</Link>
         </h4>
       </form>
     </div>

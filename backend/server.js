@@ -12,7 +12,17 @@ app.get("/", (req, res) => {
   res.send("My Task Manager App");
 });
 
-app.use("/tasks", tasks);
+const authenticateUser = require("./middleware/authentication.js");
+app.use("/tasks", authenticateUser, tasks);
+
+// routers
+const authRouter = require("../backend/routes/auth.js");
+
+// routes
+app.use("/user", authRouter);
+app.use("/new-user", authRouter);
+
+// app.use("/user/dashboard", authenticateUser, userRouter);
 
 app.use(errorHandlerMiddleware);
 

@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const connectDB = require("./db/connect");
 const tasks = require("./routes/tasks.js");
+const passwordRouter = require("./routes/password.js");
 const errorHandlerMiddleware = require("./middleware/error-handler.js");
 require("dotenv").config();
 
@@ -21,6 +22,7 @@ const authRouter = require("../backend/routes/auth.js");
 // routes
 app.use("/user", authRouter);
 app.use("/new-user", authRouter);
+app.use("/auth", passwordRouter);
 
 // app.use("/user/dashboard", authenticateUser, userRouter);
 

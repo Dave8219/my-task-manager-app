@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "../styles/tasks.css";
-
+import axios from "axios";
 const AddPeople = ({ onAdd }) => {
   // const [people, setPeople] = useState(names);
   const [formData, setFormData] = useState({
@@ -38,9 +38,9 @@ const AddPeople = ({ onAdd }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
+    const { name, task, progress } = formData;
     if (
       !formData.name.trim() ||
       !formData.task.trim() ||
@@ -48,6 +48,28 @@ const AddPeople = ({ onAdd }) => {
     ) {
       alert("Please fill out all fields before adding a person.");
       return; // Stop the function here — don't add anything
+    }
+
+    try {
+      const token = localStorage.getItem("token");
+      const response = await axios.post(
+        "http://localhost:3000/tasks",
+        {
+          name,
+          task,
+          progress,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      const tasks = response.data;
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    } catch (error) {
+      console.log(error, "Please enter all fields");
     }
 
     const newPerson = {
@@ -76,7 +98,12 @@ const AddPeople = ({ onAdd }) => {
           placeholder="Enter task"
         />
 
-        <select name="progress" onChange={handleChange} className="select-btn">
+        <select
+          name="progress"
+          value={formData.progress}
+          onChange={handleChange}
+          className="select-btn"
+        >
           <option value="">Select Progress</option>
           <option value="Done">Done</option>
           <option value="In Progress">In Progress</option>

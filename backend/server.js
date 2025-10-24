@@ -1,13 +1,23 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const port = process.env.PORT || 3000;
 const connectDB = require("./db/connect");
 const tasks = require("./routes/tasks.js");
 const passwordRouter = require("./routes/password.js");
 const errorHandlerMiddleware = require("./middleware/error-handler.js");
 require("dotenv").config();
+const helmet = require("helmet");
 
 app.use(express.json());
+
+app.use(helmet());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("My Task Manager App");

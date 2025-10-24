@@ -6,6 +6,7 @@ import LogoutLink from "./components/LogoutLink.jsx";
 import GridContainerHeading from "./components/GridContainerHeading.jsx";
 import CustomerInfo from "./components/CustomerInfo.jsx";
 import AddPeople from "./components/AddPeople.jsx";
+import axios from "axios";
 
 const RenderTasks = () => {
   // const [people, setPeople] = useState(names);

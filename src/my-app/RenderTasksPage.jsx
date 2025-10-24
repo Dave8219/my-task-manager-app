@@ -10,6 +10,33 @@ import axios from "axios";
 
 const RenderTasks = () => {
   // const [people, setPeople] = useState(names);
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await axios.get("http://localhost:3000/tasks", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        setPeople(
+          response.data.tasks.map((task) => ({
+            id: task._id,
+            name: task.name,
+            task: task.task,
+            progress: task.progress,
+          }))
+        );
+      } catch (error) {
+        console.error("Failed to fetch tasks.", error);
+      }
+    };
+
+    fetchTasks();
+  }, []);
+
   const [people, setPeople] = useState(() => {
     const saved = localStorage.getItem("people");
     return saved ? JSON.parse(saved) : names;
@@ -28,8 +55,23 @@ const RenderTasks = () => {
     setPeople([...people, newPerson]);
   };
 
-  const deletePerson = (id) => {
-    setPeople(people.filter((person) => person.id !== id));
+  const deletePerson = async (id) => {
+    try {
+      if (typeof id === "string" && id.length === 24) {
+        const token = localStorage.getItem("token");
+        console.log("Deleting person with id:", id);
+
+        await axios.delete(`http://localhost:3000/tasks/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+      }
+      setPeople(people.filter((person) => person.id !== id));
+    } catch (error) {
+      console.error(error);
+      alert("Failed to delete task. Please try again.");
+    }
   };
 
   const editPerson = (updatedPerson) => {

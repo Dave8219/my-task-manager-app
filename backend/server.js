@@ -9,7 +9,11 @@ const errorHandlerMiddleware = require("./middleware/error-handler.js");
 require("dotenv").config();
 const helmet = require("helmet");
 
-app.use(express.json());
+app.use(
+  express.json({
+    strict: false,
+  })
+);
 
 app.use(helmet());
 app.use(
@@ -29,7 +33,7 @@ app.use("/tasks", authenticateUser, tasks);
 // routers
 const authRouter = require("../backend/routes/auth.js");
 
-// routes
+// login routes
 app.use("/user", authRouter);
 app.use("/new-user", authRouter);
 app.use("/auth", passwordRouter);

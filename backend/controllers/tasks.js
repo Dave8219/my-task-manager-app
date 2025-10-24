@@ -44,8 +44,8 @@ const deleteTask = async (req, res, next) => {
 
     if (!task) {
       // return next(`No task with ID: ${task}`, 404);
-
-      throw new BadRequestError("No existing ID found");
+      return res.status(404).json({ msg: `No task found with id: ${taskId}` });
+      // throw new BadRequestError("No existing ID found");
     }
     res.status(200).json({ task });
   } catch (error) {

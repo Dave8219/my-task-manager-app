@@ -66,17 +66,27 @@ const AddPeople = ({ onAdd }) => {
         }
       );
 
-      const tasks = response.data;
-      localStorage.setItem("tasks", JSON.stringify(tasks));
+      // const tasks = response.data;
+
+      const newTask = response.data.tasks;
+      onAdd({
+        id: newTask._id,
+        name: newTask.name,
+        task: newTask.task,
+        progress: newTask.progress,
+      });
+      localStorage.setItem("tasks", JSON.stringify(newTask));
     } catch (error) {
       console.log(error, "Please enter all fields");
     }
-
+    /*
     const newPerson = {
       id: Date.now(),
       ...formData,
     };
-    onAdd(newPerson);
+    */
+
+    // onAdd(newPerson);
     setFormData({ name: "", task: "", progress: "" });
   };
 

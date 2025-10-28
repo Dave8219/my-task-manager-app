@@ -34,7 +34,7 @@ const requestPasswordReset = async (req, res) => {
   await user.save();
 
   // Create reset URL (this would be your frontend)
-  const resetURL = `http://localhost:3000/reset-password/${resetToken}`;
+  const resetURL = `http://localhost:5173/reset-password/${resetToken}`;
 
   // (Optional) Send reset email
   await sendEmail({

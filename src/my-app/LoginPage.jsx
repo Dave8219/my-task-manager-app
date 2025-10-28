@@ -23,7 +23,7 @@ const LoginPage = () => {
       const token = response.data.token;
       localStorage.setItem("token", token);
       setIsLoggedIn(true);
-      navigate("/", { replace: true });
+      navigate("/tasks", { replace: true });
     } catch (error) {
       // console.log(error, "Login Failed:", error.response?.data || error.message);
       console.error("Login failed:", error.response?.data || error.message);

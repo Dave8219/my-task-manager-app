@@ -23,10 +23,12 @@ app.use(
   })
 );
 
+// testing backend
+/*
 app.get("/", (req, res) => {
   res.send("My Task Manager App");
 });
-
+*/
 const authenticateUser = require("./middleware/authentication.js");
 app.use("/tasks", authenticateUser, tasks);
 

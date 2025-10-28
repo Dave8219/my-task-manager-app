@@ -40,6 +40,7 @@ p {
   padding: 10px;
   width: 100px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .username {

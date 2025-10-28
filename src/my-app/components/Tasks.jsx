@@ -16,7 +16,7 @@ const Tasks = ({ people, onDelete, onEdit }) => {
   });
 
   const startEditing = (person) => {
-    setEditingId(person.id);
+    setEditingId(person._id);
     setEditValues({
       name: person.name,
       task: person.task,
@@ -26,11 +26,24 @@ const Tasks = ({ people, onDelete, onEdit }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setEditValues({ ...editValues, [name]: value });
+    setEditValues((prev) => ({ ...prev, [name]: value }));
   };
 
+  /*
   const saveEdit = (id) => {
-    const updatedPerson = { id, ...editValues };
+    const personToEdit = people.find((p) => p.id === id);
+    // const updatedPerson = { id, ...editValues };
+    const updatedPerson = { ...personToEdit, ...editValues };
+    onEdit(updatedPerson);
+    setEditingId(null);
+  };
+*/
+
+  const saveEdit = (id) => {
+    const updatedPerson = {
+      ...people.find((p) => p._id === id),
+      ...editValues,
+    };
     onEdit(updatedPerson);
     setEditingId(null);
   };
@@ -40,7 +53,9 @@ const Tasks = ({ people, onDelete, onEdit }) => {
   return (
     <div className="grid-container-box">
       <div className="grid-container">
-        {people.map(({ id, name, task, progress }) => {
+        {people.map(({ _id, name, task, progress }) => {
+          // const { _id, name, task, progress } = person || {};
+          console.log(" _id:", _id, " typeof _id:", typeof _id, " name:", name);
           // const { id, name, task, progress } = person;
           /*
           let progressStyle = {};
@@ -56,7 +71,7 @@ const Tasks = ({ people, onDelete, onEdit }) => {
           }
 */
 
-          const isEditing = editingId === id; // to set conditional statements
+          const isEditing = editingId === _id; // to set conditional statements
 
           const currentProgress = isEditing ? editValues.progress : progress;
 
@@ -69,7 +84,7 @@ const Tasks = ({ people, onDelete, onEdit }) => {
           const progressStyle = styles[currentProgress] || {};
 
           return (
-            <React.Fragment key={id}>
+            <React.Fragment key={_id}>
               <div className="info-box-1">
                 {isEditing ? (
                   <input
@@ -82,18 +97,23 @@ const Tasks = ({ people, onDelete, onEdit }) => {
                 )}
                 {isEditing ? (
                   <>
-                    <button onClick={() => saveEdit(id)}>Save</button>
+                    <button onClick={() => saveEdit(_id)}>Save</button>
                     <button onClick={cancelEdit}>Cancel</button>
                   </>
                 ) : (
                   <>
                     <button
                       className="edit-btn"
-                      onClick={() => startEditing({ id, name, task, progress })}
+                      onClick={() =>
+                        startEditing({ _id, name, task, progress })
+                      }
                     >
                       Edit
                     </button>
-                    <button className="delete-btn" onClick={() => onDelete(id)}>
+                    <button
+                      className="delete-btn"
+                      onClick={() => onDelete(_id)}
+                    >
                       Delete
                     </button>
                   </>

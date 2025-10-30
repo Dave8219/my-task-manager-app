@@ -42,7 +42,7 @@ const LoginPage = () => {
   return (
     <div>
       <form className="login-container" onSubmit={handleLogin}>
-        <h1>Login</h1>
+        <h1 className="login-header">Login</h1>
         <div className="login-info">
           <div className="username-box">
             <p className="username">Email</p>
@@ -70,16 +70,24 @@ const LoginPage = () => {
             </button>
           </div>
           <div className="forgot-box">
-            <p className="forgot-user">
-              <a href="/verify"> Forgot Username </a>
+            <p>
+              <a href="/verify" className="forgot-user">
+                {" "}
+                Forgot Username{" "}
+              </a>
             </p>
-            <p className="forgot-pass">
-              <a href="/verify"> Forgot Password </a>
+            <p>
+              <a href="/verify" className="forgot-pass">
+                {" "}
+                Forgot Password{" "}
+              </a>
             </p>
           </div>
         </div>
         <h4>
-          <Link to="/new-user/create-account">Create Account</Link>
+          <Link to="/new-user/create-account" className="create-account-btn">
+            Create Account
+          </Link>
         </h4>
       </form>
     </div>

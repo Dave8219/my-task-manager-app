@@ -13,6 +13,7 @@ const VerifyEmail = () => {
         "http://localhost:3000/auth/forgot-password",
         { email }
       );
+
       setMessage(res.data.msg);
     } catch (error) {
       setMessage(error.response?.data?.msg || "Something went wrong.");
@@ -24,7 +25,7 @@ const VerifyEmail = () => {
       <form onSubmit={handleSubmit}>
         <h1>Verify Email</h1>
         <div>
-          <label>Email:</label>
+          <label className="email-line">Email:</label>
           <input
             type="email"
             placeholder="Enter Your Email"

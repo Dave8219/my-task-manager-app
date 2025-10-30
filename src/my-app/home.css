@@ -1,9 +1,13 @@
+body {
+  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+}
+
 .home-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+  /* background: linear-gradient(135deg, #1e1e2f, #2a2a40); */
   color: white;
   text-align: center;
   padding: 0 1rem;
@@ -74,4 +78,11 @@
   .home-btn {
     width: 100%;
   }
+}
+
+.image-logo {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  border: solid #f0f0f0 2px;
 }

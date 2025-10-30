@@ -1,8 +1,10 @@
 body {
   background-color: rgb(158, 201, 238);
-  color: black;
+  min-height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
+  color: black;
 }
 
 span {
@@ -121,16 +123,19 @@ input::placeholder {
 
 .info-box-p {
   font-size: 1rem;
+  color: black;
 }
 
 .customer-info {
   text-align: start;
   padding-left: 40px;
+  color: white;
 }
 
 .heading {
   text-align: start;
   padding-left: 40px;
+  color: white;
 }
 
 .add-button {
@@ -150,10 +155,22 @@ input::placeholder {
 }
 
 .logout-btn {
-  color: #202bf3ff;
+  color: rgb(216, 217, 240);
   font-size: 1rem;
   font-weight: 700;
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.tasks-heading {
+  color: black;
+  margin-top: 14px;
+}
+.submit-btn {
+  margin-top: 8px;
+}
+
+.email-line {
+  margin-right: 8px;
 }

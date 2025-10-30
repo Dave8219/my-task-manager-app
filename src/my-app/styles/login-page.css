@@ -1,11 +1,31 @@
 body {
-  background-color: rgb(158, 201, 238);
+  /* background-color: rgb(158, 201, 238); */
   height: 100vh;
 }
 
 p {
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: black !important;
+  background-color: white !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+input:autofill {
+  background-color: white !important;
+  color: black !important;
+}
+
+input {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .login-container {
@@ -22,6 +42,15 @@ p {
   height: 300px;
   border-radius: 8px;
   border: solid rgba(0, 0, 0, 0.486) 0.5px;
+}
+
+.login-header {
+  color: white;
+}
+
+.create-account-btn {
+  color: #2196f3;
+  font-size: 1.1rem;
 }
 
 .username-box {
@@ -46,11 +75,13 @@ p {
 .username {
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
+  color: black;
 }
 
 .password {
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
+  color: black;
 }
 
 .forgot-box {
@@ -62,8 +93,30 @@ p {
 
 .forgot-user {
   font-size: 0.85rem;
+  color: #2196f3;
 }
 
 .forgot-pass {
   font-size: 0.85rem;
+  color: #2196f3;
+}
+
+@media (max-width: 530px) {
+  .forgot-user,
+  .forgot-pass {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 530px) {
+  .submit-btn {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 530px) {
+  input {
+    font-size: 0.85rem;
+    padding: 4px;
+  }
 }

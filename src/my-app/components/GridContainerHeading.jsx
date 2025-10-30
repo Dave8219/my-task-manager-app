@@ -3,9 +3,9 @@ import "../styles/tasks.css";
 const GridContainerHeading = () => {
   return (
     <div className="grid-container-heading">
-      <h4>Name</h4>
-      <h4>Task</h4>
-      <h4>Progress</h4>
+      <h4 className="tasks-heading">Name</h4>
+      <h4 className="tasks-heading">Task</h4>
+      <h4 className="tasks-heading">Progress</h4>
     </div>
   );
 };

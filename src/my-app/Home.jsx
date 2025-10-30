@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
-import "./Home.css";
+import "./home.css";
 
 function Home() {
   return (
     <div className="home-container">
       <div className="home-content">
+        <img
+          src="/src/assets/Planify Logo.png"
+          className="image-logo"
+          alt="Company Logo"
+        />
         <h1 className="home-title">Welcome to Task Manager</h1>
         <p className="home-subtitle">
           Stay organized, manage your daily tasks, and track progress

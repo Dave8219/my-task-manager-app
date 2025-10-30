@@ -125,5 +125,80 @@ setFormData({ name: "", task: "", progress: "" });
 ## 🧑‍💻 Author
 
 David Garcia
-Frontend Developer | Aspiring Full Stack Engineer
+Frontend & Backend Developer | Aspiring Full Stack Engineer
+📧 dgarcia123david@gmail.com
+
+## Backend README
+
+Backend (Node.js + Express)
+
+This backend handles user authentication, task management, and account creation for the Task Manager App. It is built with Node.js, Express, MongoDB, and Mongoose.
+
+Features
+
+User Authentication
+
+Login & registration
+
+Password hashing & JWT-based authentication
+
+Protected routes using middleware
+
+Task Management
+
+Create, read, update, and delete tasks (CRUD)
+
+Tasks are associated with users
+
+Account Management
+
+Create new accounts
+
+Manage user sessions
+
+Security
+
+Helmet for security headers
+
+CORS configured to allow requests from frontend
+
+Input validation and error handling
+
+Technologies
+
+Node.js
+
+Express.js
+
+MongoDB + Mongoose
+
+JWT for authentication
+
+Helmet & CORS for security
+
+## Installation
+
+1. Clone the repo: git clone [<your-repo-url>](https://github.com/your-username/task-manager-app.git)
+2. npm install
+3. Create a .env file in the backend root with:
+   MONGO_URI=<your_mongodb_connection_string>
+   JWT_SECRET=<your_jwt_secret>
+   PORT=3000
+4. Start the server: npm run dev
+   The backend will run on http://localhost:3000 by default.
+
+## API Routes
+
+Route Method Description Protected?
+/user/login POST Log in existing user No
+/new-user/create-account POST Create new user account No
+/tasks GET/POST/PUT/DELETE CRUD tasks Yes, JWT token req
+/auth POST Password reset / management No
+
+# Error Handling
+
+The backend uses a centralized error-handling middleware to return consistent JSON responses for validation errors, authentication errors, and server errors.
+
+David Garcia
+Frontend & Backend Developer | Aspiring Full Stack Engineer
 📧 dgarcia123david@gmail.com

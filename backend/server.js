@@ -19,7 +19,7 @@ app.use(helmet());
 
 const allowedOrigins = [
   "http://localhost:5173", // local dev
-  "https://your-netlify-site.netlify.app", // deployed frontend
+  "https://my-taskmanagerapp.netlify.app", // deployed frontend
 ];
 
 app.use(

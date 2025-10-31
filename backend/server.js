@@ -16,9 +16,15 @@ app.use(
 );
 
 app.use(helmet());
+
+const allowedOrigins = [
+  "http://localhost:5173", // local dev
+  "https://your-netlify-site.netlify.app", // deployed frontend
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: allowedOrigins,
     credentials: true,
   })
 );

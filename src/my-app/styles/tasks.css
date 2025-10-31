@@ -81,23 +81,6 @@ input::placeholder {
   display: none;
 }
 
-.save-btn {
-  margin-left: 20px;
-  color: whitesmoke;
-  display: none;
-}
-
-.cancel-btn {
-  margin-left: 20px;
-  display: none;
-  color: whitesmoke;
-}
-
-.task:hover .save-btn,
-.task:hover .cancel-btn {
-  display: inline-block;
-}
-
 .info-box-1 {
   display: flex;
   justify-content: space-between;

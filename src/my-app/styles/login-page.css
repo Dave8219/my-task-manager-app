@@ -29,8 +29,12 @@ input {
 }
 
 .login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  place-items: center;
+  height: 100vh;
 }
 
 .login-info {
@@ -38,10 +42,18 @@ input {
   flex-direction: column;
   background-color: rgb(205, 205, 214);
   width: 50%;
+  max-width: 400px;
+  min-width: 200px;
   place-items: center;
   height: 300px;
   border-radius: 8px;
   border: solid rgba(0, 0, 0, 0.486) 0.5px;
+}
+
+@media (max-width: 768px) {
+  .login-info {
+    width: 80%;
+  }
 }
 
 .login-header {

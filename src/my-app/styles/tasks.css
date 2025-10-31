@@ -72,11 +72,13 @@ input::placeholder {
 .delete-btn {
   margin-left: 20px;
   display: none;
+  color: whitesmoke;
 }
 
 .edit-btn {
   margin-left: 20px;
   display: none;
+  color: whitesmoke;
 }
 
 .info-box-1 {

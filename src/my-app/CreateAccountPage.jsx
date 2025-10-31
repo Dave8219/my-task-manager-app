@@ -17,7 +17,7 @@ const CreateAccount = () => {
     setMessage(""); // clear previous message
     try {
       const res = await axios.post(
-        "http://localhost:3000/new-user/create-account",
+        `${import.meta.env.VITE_API_BASE_URL}/new-user/create-account`,
         newUser
       );
       setMessage(res.data.msg || "Account created Successfully!");

@@ -15,10 +15,13 @@ const LoginPage = () => {
     const password = e.target.password.value;
 
     try {
-      const response = await axios.post("http://localhost:3000/user/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL}/user/login`,
+        {
+          email,
+          password,
+        }
+      );
       console.log("Login successful:", response.data);
       const token = response.data.token;
       localStorage.setItem("token", token);

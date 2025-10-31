@@ -15,11 +15,14 @@ const RenderTasks = () => {
     const fetchTasks = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:3000/tasks", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_BASE_URL}/tasks`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
         setPeople(
           response.data.tasks.map((task) => ({
@@ -61,11 +64,14 @@ const RenderTasks = () => {
         const token = localStorage.getItem("token");
         console.log("Deleting person with id:", _id);
 
-        await axios.delete(`http://localhost:3000/tasks/${_id}`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        await axios.delete(
+          `${import.meta.env.VITE_API_BASE_URL}/tasks/${_id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
       }
       setPeople(people.filter((person) => person._id !== _id));
     } catch (error) {
@@ -89,7 +95,7 @@ const RenderTasks = () => {
       // const id = updatedPerson._id; // use _id for backend
       // Send the updated data to your backend
       const response = await axios.patch(
-        `http://localhost:3000/tasks/${updatedPerson._id}`,
+        `${import.meta.env.VITE_API_BASE_URL}/tasks/${updatedPerson._id}`,
         { ...updatedPerson },
         {
           headers: {

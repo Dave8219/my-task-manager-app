@@ -12,7 +12,7 @@ const ResetPassword = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `http://localhost:3000/auth/reset-password/${token}`,
+        `${import.meta.env.VITE_API_BASE_URL}/auth/reset-password/${token}`,
         { password }
       );
       setMessage(res.data.msg);

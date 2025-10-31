@@ -81,6 +81,18 @@ input::placeholder {
   color: whitesmoke;
 }
 
+.save-btn {
+  margin-left: 20px;
+  display: none;
+  color: whitesmoke;
+}
+
+.cancel-btn {
+  margin-left: 20px;
+  display: none;
+  color: whitesmoke;
+}
+
 .info-box-1 {
   display: flex;
   justify-content: space-between;

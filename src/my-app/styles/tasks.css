@@ -78,11 +78,13 @@ input::placeholder {
 .edit-btn {
   margin-left: 20px;
   color: whitesmoke;
+  display: none;
 }
 
 .save-btn {
   margin-left: 20px;
   color: whitesmoke;
+  display: none;
 }
 
 .cancel-btn {

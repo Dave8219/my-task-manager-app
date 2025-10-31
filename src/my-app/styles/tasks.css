@@ -93,6 +93,11 @@ input::placeholder {
   color: whitesmoke;
 }
 
+.task:hover .save-btn,
+.task:hover .cancel-btn {
+  display: inline-block;
+}
+
 .info-box-1 {
   display: flex;
   justify-content: space-between;

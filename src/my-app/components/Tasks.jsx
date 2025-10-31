@@ -97,10 +97,10 @@ const Tasks = ({ people, onDelete, onEdit }) => {
                 )}
                 {isEditing ? (
                   <>
-                    <button onClick={() => saveEdit(_id)} className="save-btn">
+                    <button className="save-btn" onClick={() => saveEdit(_id)}>
                       Save
                     </button>
-                    <button onClick={cancelEdit} className="cancel-btn">
+                    <button className="cancel-btn" onClick={cancelEdit}>
                       Cancel
                     </button>
                   </>

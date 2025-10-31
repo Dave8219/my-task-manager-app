@@ -6,7 +6,7 @@ function Home() {
     <div className="home-container">
       <div className="home-content">
         <img
-          src="/src/assets/Planify Logo.png"
+          src="/Planify Logo.png"
           className="image-logo"
           alt="Company Logo"
         />

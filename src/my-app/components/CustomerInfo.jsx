@@ -8,9 +8,9 @@ const CustomerInfo = () => {
       </div>
 
       <div className="customer-info">
-        <div>Worksite: Garcia Home</div>
+        <div>Worksite: Smith Home</div>
 
-        <div>Address: 201 E 3rd St, San Juan, TX, 78589</div>
+        <div>Address: 123 N 4th St, City, ST, 56789</div>
       </div>
     </>
   );
